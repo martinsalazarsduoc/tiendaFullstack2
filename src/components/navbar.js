@@ -9,7 +9,7 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Productos</a>
@@ -29,9 +29,9 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
     </div>
     </nav>`
 
-window.document.addEventListener('DOMContentLoaded', (e=>{
+window.document.addEventListener('DOMContentLoaded', (e => {
     const nav = document.getElementById("nav")
-    if(!nav)return
+    if (!nav) return
 
     nav.outerHTML = navbar
 }))
