@@ -16,7 +16,10 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <a class="nav-link" href="#">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nosotros</a>
+                    <a class="nav-link" href="src/pages/Nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="src/pages/news.html">Noticias</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contacto</a>
