@@ -1,4 +1,3 @@
-
 const handleForm = (e, newUser) => {
     e.preventDefault()
     console.log({ newUser })
@@ -28,5 +27,25 @@ window.document.addEventListener('DOMContentLoaded', (e) => {
 
     form.addEventListener("submit", (e) => {
         handleForm(e, newUser)
+    })
+
+    const userTable = document.getElementById("user-table")
+    const userList = window.localStorage.getItem("userList") ? JSON.parse(window.localStorage.getItem("userList")) : []
+    if (userList.length === 0) {
+        userTable.innerHTML = `<tr>
+                                    <th scope="row" class="fs-6">-</th>
+                                    <td class="fs-7">No hay usuarios registrados.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>`
+    }
+    userList.forEach((user, i) => {
+        userTable.innerHTML += `<tr>
+                                    <td class="fs-7">${user.name}</td>
+                                    <td class="fs-7">${user.phone}</td>
+                                    <td class="fs-7">${user.address}</td>
+                                    <td class="fs-7">${user.email}</td>
+                                </tr>`
     })
 })
