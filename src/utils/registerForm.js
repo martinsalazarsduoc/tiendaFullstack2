@@ -11,7 +11,7 @@ const renderTable = () => {
                                 </tr>`
     }
     userList.forEach((user, i) => {
-        userTable.innerHTML += `<tr>
+        userTable.innerHTML += `<tr class="${i + 1 !== userList.length ? "border-bottom" : ""}">
                                     <td class="fs-7">${user.name}</td>
                                     <td class="fs-7">${user.phone}</td>
                                     <td class="fs-7">${user.address}</td>
@@ -51,6 +51,7 @@ window.document.addEventListener('DOMContentLoaded', (e) => {
     form.addEventListener("submit", (e) => {
         handleForm(e, newUser)
     })
+    renderTable()
 
 
 })
