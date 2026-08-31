@@ -33,7 +33,6 @@ window.document.addEventListener('DOMContentLoaded', (e) => {
     const userList = window.localStorage.getItem("userList") ? JSON.parse(window.localStorage.getItem("userList")) : []
     if (userList.length === 0) {
         userTable.innerHTML = `<tr>
-                                    <th scope="row" class="fs-6">-</th>
                                     <td class="fs-7">No hay usuarios registrados.</td>
                                     <td></td>
                                     <td></td>
