@@ -23,12 +23,95 @@
         <div class="row h-100">
             <div id="nav"></div>
             <div class="col-10 bg-dark">
-                <p class="fs-1">Hola administrador</p>
+                <p class="fs-1 text-white">Hola administrador</p>
+                <div class="row">
+                    <!--inicio formulario-->
+                    <div class="col-6">
+                        <form class="row bg-white rounded-4 shadow" id="form-register">
+                            <p class="fs-3">Agregar usuario</p>
+                            <div class="mb-3 col-6">
+                                <label for="name" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Jane Doe">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="jane@doe.com">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="******">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="repeat-password" class="form-label">Confirmar contraseña</label>
+                                <input type="password" class="form-control" id="repeat-password" name="repeatPassword"
+                                    placeholder="******">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefono (opcional)</label>
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                    placeholder="jane+569xxxxxxxx">
+                            </div>
+                            <div class="col-6"><label for="exampleDataList" class="form-label">Región</label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                    placeholder="Región..." name="region">
+                                <datalist id="datalistOptions">
+                                    <option value="San Francisco">
+                                    <option value="New York">
+                                    <option value="Seattle">
+                                    <option value="Los Angeles">
+                                    <option value="Chicago">
+                                </datalist>
+                            </div>
+                            <div class="col-6"><label for="exampleDataList" class="form-label">Comuna</label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                    placeholder="Comuna..." name="comuna">
+                                <datalist id="datalistOptions">
+                                    <option value="San Francisco">
+                                    <option value="New York">
+                                    <option value="Seattle">
+                                    <option value="Los Angeles">
+                                    <option value="Chicago">
+                                </datalist>
+                            </div>
+                            <div class="my-4">
+                                <button type="submit" class="btn btn-success">Crear usuario</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--fin formulario-->
+                    <div class="col-6">
+                        <p class="text-white fs-4">Listado de usuarios</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Dirección</th>
+                                    <th scope="col">Correo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>correo</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="../../components/admin/adminNavbar.js"></script>
+    <script src="../../utils/registerForm.js"></script>
 </body>
 
 </html>
