@@ -28,14 +28,14 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="d-flex align-items-center" role="search">
                 
                 <button class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito(0)</button>
-            </div>
+            </div> 
         </div>
     </div>
-    </nav>`
+    </nav>`;
 
-window.document.addEventListener('DOMContentLoaded', (e => {
-    const nav = document.getElementById("nav")
-    if (!nav) return
+window.document.addEventListener("DOMContentLoaded", (e) => {
+  const nav = document.getElementById("nav");
+  if (!nav) return;
 
-    nav.outerHTML = navbar
-}))
+  nav.outerHTML = navbar;
+});
