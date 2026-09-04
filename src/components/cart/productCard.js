@@ -22,14 +22,14 @@ window.document.addEventListener("DOMContentLoaded", () => {
                         <p class="text-center fs-4">$${currentProduct.precio}</p>
                         <div class="row">
                             <div class="col-4 d-flex justify-content-end px-0">
-                                <button class="rounded-circle border-0 p-1 btn btn-light"><i
+                                <button id=btn-${currentProduct.id}-minus class="rounded-circle border-0 p-1 btn btn-light"><i
                                         class="bi bi-dash fs-5"></i></button>
                             </div>
                             <div class="col-4 d-flex flex-grow-1 px-0">
-                                <input type="text" min="0" placeholder="1" class="w-100 border-0 text-center">
+                                <input type="text" min="0" placeholder="1" class="w-100 border-0 text-center" id=input-${currentProduct.id} value=${currentProduct.cantidad ? currentProduct.cantidad : 1}>
                             </div>
                             <div class="col-4 d-flex justify-content-start px-0">
-                                <button class="rounded-circle border-0 p-1 btn btn-light"><i
+                                <button id=btn-${currentProduct.id}-plus class="rounded-circle border-0 p-1 btn btn-light"><i
                                         class="bi bi-plus-lg fs-5"></i></button>
                             </div>
                         </div>
