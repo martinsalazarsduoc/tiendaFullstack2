@@ -1,12 +1,10 @@
 const saveProduct = (nombre, precio, id) => {
-  console.log("ksdflks");
-  const carrito = JSON.parse(window.localStorage.getItem("carrito"))
+  const carrito = window.localStorage.getItem("carrito")
     ? JSON.parse(window.localStorage.getItem("carrito"))
     : [];
   let newProduct = { id, nombre, precio };
-  console.log(JSON.parse(carrito));
   carrito.push(newProduct);
-  window.localStorage.setItem("carrito", carrito);
+  window.localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
 window.document.addEventListener("DOMContentLoaded", () => {
@@ -15,7 +13,7 @@ window.document.addEventListener("DOMContentLoaded", () => {
   if (!productContainer) return;
 
   for (let contador = 1; contador < 13; contador++) {
-    const product = `<div class="col-3 order-${contador}">
+    const product = `<div class="col-3 ">
         <div class="bg-light p-3 rounded">
           <img
             src="https://placehold.co/1920x1080/webp"
@@ -33,13 +31,14 @@ window.document.addEventListener("DOMContentLoaded", () => {
       </div>`;
 
     productContainer.innerHTML += product;
+  }
+});
+
+window.document.addEventListener("DOMContentLoaded", () => {
+  for (let contador = 1; contador < 13; contador++) {
     const currentButton = document.getElementById(`btn-${contador}`);
     if (!currentButton) return;
-    console.log(currentButton);
 
-    currentButton.onclick = () => {
-      console.log("onclick");
-      saveProduct("nombre", 7000, contador);
-    };
+    currentButton.onclick = () => saveProduct("nombre", 7000, contador);
   }
 });
