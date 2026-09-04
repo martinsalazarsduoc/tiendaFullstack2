@@ -27,7 +27,7 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
             </ul>
             <div class="d-flex align-items-center" role="search">
                 
-                <button class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito(0)</button>
+                <a href="/src/pages/cart.html" class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito(0)</a>
             </div> 
         </div>
     </div>
