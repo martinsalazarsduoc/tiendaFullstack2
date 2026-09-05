@@ -11,7 +11,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
     }
 
     let cartTotal = 0
-    cart.forEach(product => { cartTotal += product.precio * cantidad })
+    cart.forEach(product => { cartTotal += product.precio * product.cantidad })
     total.innerHTML = `Total: <strong>$${cartTotal}</strong>`
 })
 
@@ -27,14 +27,24 @@ window.document.addEventListener("DOMContentLoaded", () => {
         plusButton.onclick = () => {
             console.log("sumando")
             inputCantidad.value++
+            const productQuantity = inputCantidad.value
+            const newCart = cart.filter(currentProduct => currentProduct.id !== product.id)
+            newCart.push({ ...product, cantidad: productQuantity, precio: (product.precio * product.cantidad) })
+            updateCart(newCart)
             return
         }
         minusButton.onclick = () => {
             if (inputCantidad.value <= 0) {
                 inputCantidad.value = 0
+
                 return
             }
+            console.log("restando")
             inputCantidad.value--
+            const productQuantity = inputCantidad.value
+            const newCart = cart.filter(currentProduct => currentProduct.id !== product.id)
+            newCart.push({ ...product, cantidad: productQuantity, precio: (product.precio * product.cantidad) })
+            updateCart(newCart)
             return
         }
     })
