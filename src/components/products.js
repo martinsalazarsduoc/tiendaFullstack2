@@ -1,8 +1,8 @@
-const saveProduct = (nombre, precio, id) => {
+const saveProduct = (nombre, precio, id, cantidad) => {
   const carrito = window.localStorage.getItem("carrito")
     ? JSON.parse(window.localStorage.getItem("carrito"))
     : [];
-  let newProduct = { id, nombre, precio };
+  let newProduct = { id, nombre, precio, cantidad };
   carrito.push(newProduct);
   window.localStorage.setItem("carrito", JSON.stringify(carrito));
 };
@@ -39,6 +39,12 @@ window.document.addEventListener("DOMContentLoaded", () => {
     const currentButton = document.getElementById(`btn-${contador}`);
     if (!currentButton) return;
 
-    currentButton.onclick = () => saveProduct("nombre", 7000, contador);
+    currentButton.onclick = () =>
+      saveProduct(
+        "producto " + contador,
+        Math.floor(Math.random() * (50000 + 1)),
+        contador,
+        1,
+      );
   }
 });
