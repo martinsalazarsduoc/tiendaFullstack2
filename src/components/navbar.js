@@ -13,7 +13,7 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
+                    <a class="nav-link" href="/src/pages/products.html">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="src/pages/Nosotros.html">Nosotros</a>
@@ -27,15 +27,15 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
             </ul>
             <div class="d-flex align-items-center" role="search">
                 
-                <button class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito(0)</button>
+                <a href="/src/pages/cart.html" class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito(0)</a>
             </div> 
         </div>
     </div>
     </nav>`;
 
 window.document.addEventListener("DOMContentLoaded", (e) => {
-  const nav = document.getElementById("nav");
-  if (!nav) return;
+    const nav = document.getElementById("nav");
+    if (!nav) return;
 
-  nav.outerHTML = navbar;
+    nav.outerHTML = navbar;
 });
