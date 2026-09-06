@@ -1,11 +1,8 @@
 const currentPath = window.location.pathname
 const routeList = [
     { label: "Dashboard", path: "/src/pages/admin/dashboard.html" },
-    { label: "Ordenes", path: "/src/pages/admin/orders.html" },
     { label: "Inventario", path: "/src/pages/admin/inventary.html" },
-    { label: "Reportes", path: "/src/pages/admin/reports.html" },
     { label: "Empleados", path: "/src/pages/admin/employees.html" },
-    { label: "Clientes", path: "/src/pages/admin/customers.html" }
 ]
 
 const getIsActive = (href) => {
