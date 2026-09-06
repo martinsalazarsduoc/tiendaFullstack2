@@ -24,13 +24,7 @@ window.document.addEventListener("DOMContentLoaded", (e) => {
                     <a class="nav-link" href="/src/pages/products.html">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="src/pages/Nosotros.html">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="src/pages/news.html">Noticias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="/src/pages/news.html">Noticias</a>
                 </li>
             </ul>
             <div class="d-flex align-items-center" role="search">
