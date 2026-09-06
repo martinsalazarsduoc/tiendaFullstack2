@@ -17,7 +17,7 @@ window.document.addEventListener("DOMContentLoaded", () => {
           <h6 class="text-center">${product.nombre}</h6>
           <p class="text-center">$${product.precio}</p>
           <div class="d-flex justify-content-center">
-            <a class="btn btn-primary" href="/products/single?id=${product.id}">Ver</a>
+            <a class="btn btn-primary" href="../src/pages/product_detail.html?id=${product.id}">Ver</a>
           </div>
         </div>
       </div>`
