@@ -1,6 +1,6 @@
 const renderTable = () => {
     const userTable = document.getElementById("user-table")
-    const userList = window.localStorage.getItem("userList") ? JSON.parse(window.localStorage.getItem("userList")) : []
+    const userList = getUserList()
     userTable.innerHTML = ""
     if (userList.length === 0) {
         userTable.innerHTML = `<tr>
@@ -30,7 +30,7 @@ const handleForm = (e, newUser) => {
         address: `${newUser.comuna}, ${newUser.region}`,
         password: newUser.password
     }
-    const userList = window.localStorage.getItem("userList") ? JSON.parse(window.localStorage.getItem("userList")) : []
+    const userList = getUserList()
     userList.push(user)
 
     window.localStorage.setItem("userList", JSON.stringify(userList))
