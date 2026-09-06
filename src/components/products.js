@@ -34,11 +34,12 @@ window.document.addEventListener("DOMContentLoaded", () => {
   productList.forEach(product => {
     const productTemplate = `<div class="col-3 ">
         <div class="bg-light p-3 rounded">
+        <a href="../pages/product_detail.html?id=${product.id}">
           <img
             src="https://placehold.co/1920x1080/webp"
             alt=""
             class="w-100 h-auto rounded"
-          />
+          /></a>
           <div>
             <h6 class="text-center">${product.nombre} </h6>
             <p class="text-center">$${product.precio}</p>
