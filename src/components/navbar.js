@@ -1,5 +1,13 @@
 // TODO: agregar deteccion de ruta actual y marcado en el nav
-const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+
+
+window.document.addEventListener("DOMContentLoaded", (e) => {
+    const nav = document.getElementById("nav");
+    if (!nav) return;
+    const navbar = `
+    <script src="../utils/getCart.js"></script>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,15 +35,11 @@ const navbar = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
             </ul>
             <div class="d-flex align-items-center" role="search">
                 
-                <a href="/src/pages/cart.html" class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito(0)</a>
+                <a href="/src/pages/cart.html" class="btn" type="submit"> <i class="bi bi-cart2"></i>carrito</a>
             </div> 
         </div>
     </div>
     </nav>`;
-
-window.document.addEventListener("DOMContentLoaded", (e) => {
-    const nav = document.getElementById("nav");
-    if (!nav) return;
 
     nav.outerHTML = navbar;
 });

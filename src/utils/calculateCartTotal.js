@@ -1,3 +1,4 @@
+
 window.document.addEventListener('DOMContentLoaded', () => {
     const total = document.getElementById("cart-total")
     if (!total) return
@@ -22,15 +23,20 @@ window.document.addEventListener("DOMContentLoaded", () => {
         const plusButton = document.getElementById(`btn-${product.id}-plus`)
         const minusButton = document.getElementById(`btn-${product.id}-minus`)
         const inputCantidad = document.getElementById(`input-${product.id}`)
-
+        console.log("update cart func")
+        console.log({ plusButton, minusButton, inputCantidad })
         if (!plusButton || !minusButton || !inputCantidad) return
+        console.log("existen los botones de sumar y restar")
         plusButton.onclick = () => {
             console.log("sumando")
             inputCantidad.value++
             const productQuantity = inputCantidad.value
+
             const newCart = cart.filter(currentProduct => currentProduct.id !== product.id)
-            newCart.push({ ...product, cantidad: productQuantity, precio: (product.precio * product.cantidad) })
+            newCart.push({ ...product, cantidad: Number(productQuantity), precio: (product.precio * product.cantidad) })
+
             updateCart(newCart)
+            renderCart()
             return
         }
         minusButton.onclick = () => {
@@ -43,8 +49,9 @@ window.document.addEventListener("DOMContentLoaded", () => {
             inputCantidad.value--
             const productQuantity = inputCantidad.value
             const newCart = cart.filter(currentProduct => currentProduct.id !== product.id)
-            newCart.push({ ...product, cantidad: productQuantity, precio: (product.precio * product.cantidad) })
+            newCart.push({ ...product, cantidad: Number(productQuantity), precio: (product.precio * product.cantidad) })
             updateCart(newCart)
+            renderCart()
             return
         }
     })
