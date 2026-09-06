@@ -27,7 +27,8 @@ const handleForm = (e, newUser) => {
         name: newUser.name,
         phone: newUser.phone,
         email: newUser.email,
-        address: `${newUser.comuna}, ${newUser.region}`
+        address: `${newUser.comuna}, ${newUser.region}`,
+        password: newUser.password
     }
     const userList = window.localStorage.getItem("userList") ? JSON.parse(window.localStorage.getItem("userList")) : []
     userList.push(user)
@@ -49,6 +50,11 @@ window.document.addEventListener('DOMContentLoaded', (e) => {
     })
 
     form.addEventListener("submit", (e) => {
+        if (newUser.password !== newUser.repeatPassword) {
+            e.preventDefault()
+            alert("Las contraseñas no coinciden")
+            return
+        }
         handleForm(e, newUser)
     })
     renderTable()
