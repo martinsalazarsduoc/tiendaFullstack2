@@ -1,8 +1,25 @@
-const saveProduct = (nombre, precio, id, cantidad) => {
+const saveProduct = (id) => {
+  const productList = getProductsLoaded()
+  if (productList.length === 0) return
+  const product = productList.find(currentProduct => currentProduct.id === id)
+  if (!product) return
   const carrito = getCart()
-  let newProduct = { id, nombre, precio, cantidad: Number(cantidad) || 1 };
-  carrito.push(newProduct);
+  carrito.push({ ...product, cantidad: 1 });
   window.localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  const alert = `<div class="position-absolute fixed-top">
+    <div class="alert alert-success" role="alert">
+  Producto agregado al carrito!
+</div>
+  </div>`
+  let alertNode = document.createElement("div")
+  alertNode.id = "success-alert"
+  alertNode.innerHTML = alert
+  const alertContainer = document.getElementById("alert");
+  alertContainer.appendChild(alertNode)
+  setTimeout(() => {
+    alertContainer.removeChild(document.getElementById("success-alert"))
+  }, 3000)
 };
 
 window.document.addEventListener("DOMContentLoaded", () => {
@@ -44,12 +61,6 @@ window.document.addEventListener("DOMContentLoaded", () => {
     const currentButton = document.getElementById(`btn-${contador}`);
     if (!currentButton) return;
 
-    currentButton.onclick = () =>
-      saveProduct(
-        "producto " + contador,
-        Math.floor(Math.random() * (50000 + 1)),
-        contador,
-        1,
-      );
+    currentButton.onclick = () => saveProduct(contador);
   }
 });
