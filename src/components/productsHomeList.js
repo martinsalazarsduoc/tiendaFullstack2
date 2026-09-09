@@ -5,7 +5,7 @@ window.document.addEventListener("DOMContentLoaded", () => {
   const productTotal = 8
   const productList = getProductsLoaded()
   productList.slice(0, productTotal).forEach(product => {
-    const productTemplate = `<div class="col-3 my-2 ">
+    const productTemplate = `<div class="col-6 col-lg-3 my-2 ">
         <div class="bg-light p-3 rounded shadow">
           <div>
             <img

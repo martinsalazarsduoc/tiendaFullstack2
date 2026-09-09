@@ -32,7 +32,7 @@ window.document.addEventListener("DOMContentLoaded", () => {
     return
   }
   productList.forEach(product => {
-    const productTemplate = `<div class="col-3 ">
+    const productTemplate = `<div class="col-6 col-lg-3 ">
         <div class="bg-light p-3 rounded">
         <a href="../pages/product_detail.html?id=${product.id}">
           <img
