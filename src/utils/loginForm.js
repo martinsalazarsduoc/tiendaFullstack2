@@ -1,3 +1,5 @@
+const emailValido = (email) => /@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/.test(email)
+
 const handleForm = (e, user) => {
     e.preventDefault()
     const userList = getUserList()
@@ -20,6 +22,11 @@ window.document.addEventListener("DOMContentLoaded", () => {
     })
 
     form.addEventListener("submit", (e) => {
+        if (!emailValido(user.email)) {
+            e.preventDefault()
+            alert("El correo debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com")
+            return
+        }
         handleForm(e, user)
     })
 })

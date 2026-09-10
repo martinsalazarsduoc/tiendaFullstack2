@@ -1,4 +1,4 @@
-
+const emailValido = (email) => /@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/.test(email)
 
 const handleForm = (e, newUser) => {
     e.preventDefault()
@@ -30,6 +30,11 @@ window.document.addEventListener('DOMContentLoaded', (e) => {
     })
 
     form.addEventListener("submit", (e) => {
+        if (!emailValido(newUser.email)) {
+            e.preventDefault()
+            alert("El correo debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com")
+            return
+        }
         if (newUser.password !== newUser.repeatPassword) {
             e.preventDefault()
             alert("Las contraseñas no coinciden")
